@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <h1>Resume Builder</h1>
+
+    <!-- Form Section -->
+    <div class="form-section">
+      <h2>Enter Your Details</h2>
+      <form id="resume-form">
+        <!-- Personal Details -->
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your full name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" placeholder="Enter your phone number">
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" placeholder="Enter your address">
+        </div>
+
+        <div class="form-group">
+          <label for="profile-img">Profile Image</label>
+          <input type="file" id="profile-img" accept="image/*">
+        </div>
+
+        <!-- About Me -->
+        <div class="form-group">
+          <label for="about">About Me</label>
+          <textarea id="about" rows="4" placeholder="Tell something about yourself"></textarea>
+        </div>
+
+        <!-- Skills -->
+        <div class="form-group">
+          <label for="skills">Skills (comma-separated)</label>
+          <input type="text" id="skills" placeholder="e.g. HTML, CSS, JavaScript">
+        </div>
+
+        <!-- Button to Update Resume -->
+        <button type="button" onclick="updateResume()">Update Resume</button>
+      </form>
+    </div>
+
+    <!-- Resume Preview Section -->
+    <div class="resume-preview">
+      <div class="left-side">
+        <img src="" alt="Profile Image" id="preview-img" class="profile-img" style="display: none;">
+        <h2 id="preview-name">Full Name</h2>
+        <p id="preview-email"></p>
+        <p id="preview-phone"></p>
+        <p id="preview-address"></p>
+      </div>
+
+      <div class="right-side">
+        <h2>About Me</h2>
+        <p id="preview-about">This is where your bio will be displayed.</p>
+
+        <h2>Skills</h2>
+        <ul id="preview-skills"></ul>
+      </div>
+    </div>
+  </div>
+  <button type="button" onclick="downloadResume()" style="padding: 24px; border-radius: 10px; background-color: #047383;">Download Resume as PDF</button>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
